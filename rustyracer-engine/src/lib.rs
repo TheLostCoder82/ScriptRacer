@@ -11,6 +11,8 @@ pub mod physics;
 pub mod audio;
 pub mod ui;
 pub mod base_lib;
+pub mod input;
+pub mod racing_lib;
 
 /// Prelude module for convenient imports
 pub mod prelude {
