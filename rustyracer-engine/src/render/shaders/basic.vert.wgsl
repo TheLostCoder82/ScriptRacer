@@ -1,0 +1,44 @@
+//! Basic vertex shader
+
+struct VertexInput {
+    @location(0) position: vec3<f32>,
+    @location(1) normal: vec3<f32>,
+    @location(2) tex_coords: vec2<f32>,
+};
+
+struct VertexOutput {
+    @builtin(position) clip_position: vec4<f32>,
+    @location(0) world_pos: vec3<f32>,
+    @location(1) normal: vec3<f32>,
+    @location(2) tex_coords: vec2<f32>,
+};
+
+struct CameraUniform {
+    view_proj: mat4x4<f32>,
+    position: vec3<f32>,
+};
+
+@group(0) @binding(0)
+var<uniform> camera: CameraUniform;
+
+struct ModelUniform {
+    model: mat4x4<f32>,
+};
+
+@group(1) @binding(1)
+var<uniform> model: ModelUniform;
+
+@vertex
+fn vs_main(in: VertexInput) -> VertexOutput {
+    var out: VertexOutput;
+    
+    let world_pos = model.model * vec4<f32>(in.position, 1.0);
+    out.world_pos = world_pos.xyz;
+    
+    out.normal = normalize((model.model * vec4<f32>(in.normal, 0.0)).xyz);
+    out.tex_coords = in.tex_coords;
+    
+    out.clip_position = camera.view_proj * world_pos;
+    
+    return out;
+}
