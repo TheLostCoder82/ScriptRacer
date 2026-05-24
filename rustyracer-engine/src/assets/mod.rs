@@ -2,6 +2,7 @@
 
 pub mod handle;
 pub mod manager;
+pub mod pipeline;
 
 pub use handle::*;
 pub use manager::*;

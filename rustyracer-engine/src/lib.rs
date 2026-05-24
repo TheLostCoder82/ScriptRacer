@@ -13,6 +13,9 @@ pub mod ui;
 pub mod base_lib;
 pub mod input;
 pub mod racing_lib;
+pub mod editor;
+pub mod networking;
+pub mod optimization;
 
 /// Prelude module for convenient imports
 pub mod prelude {
