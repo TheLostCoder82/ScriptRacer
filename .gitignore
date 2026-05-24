@@ -1,29 +1,39 @@
 ```
-# Rust-specific ignores
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 target/
-Cargo.lock
 
 # Dependencies
-vendor/
+.venv/
+venv/
+node_modules/
+Cargo.lock
 
-# Build artifacts
-**/*.rs.bk
-**/*.rlib
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
 # Environment
 .env
 .env.local
 *.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Rust specific
+**/target/
+Cargo.lock
 ```

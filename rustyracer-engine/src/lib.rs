@@ -6,6 +6,11 @@ pub mod ecs;
 pub mod assets;
 pub mod platform;
 pub mod utils;
+pub mod render;
+pub mod physics;
+pub mod audio;
+pub mod ui;
+pub mod base_lib;
 
 /// Prelude module for convenient imports
 pub mod prelude {
