@@ -35,6 +35,18 @@ tokio = { version = "1.35", features = ["full"] }
 walkdir = "2.4"
 hotlib = "0.1"
 
+# Phase 3 racing layer dependencies
+gilrs = { version = "0.11", features = ["serde"] }
+sdl2 = { version = "0.35", features = ["serde", "force-feedback"] }
+udev = { version = "0.8", features = ["serde"] }
+approx = "0.5"
+rand = "0.8"
+paste = "1.0"
+navmesh = "0.8"
+ordered-float = "4.0"
+ron = "0.8"
+typetag = "0.2"
+
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }
 

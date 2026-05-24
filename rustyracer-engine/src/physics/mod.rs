@@ -3,6 +3,7 @@
 pub mod components;
 pub mod world;
 pub mod systems;
+pub mod vehicle;
 
 pub use components::*;
 pub use world::*;
